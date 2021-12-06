@@ -1,0 +1,30 @@
+
+mat-toolbar {
+    display: flex;
+    background-color: green;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    color: green;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 20px;
+    line-height: 29px;
+}
+
+mat-divider {
+    color: gray;
+}
+      
+.title {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.buttons {
+    display: flex;
+}

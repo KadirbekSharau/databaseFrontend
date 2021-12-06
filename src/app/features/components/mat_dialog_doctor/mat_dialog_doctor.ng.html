@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Hi {{data.degree}}</h1>
+<div mat-dialog-content>
+  <p>What degree you want to change?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Degree</mat-label>
+    <input matInput [(ngModel)]="data.degree">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.degree" cdkFocusInitial>Ok</button>
+</div>

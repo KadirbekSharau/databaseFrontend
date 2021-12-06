@@ -1,0 +1,45 @@
+<header [user_status]="isLogged"></header>
+<!-- <button mat-raised-button>Be Doctor</button> -->
+<div class="block">
+  <p class="title">Doctors</p>
+  <div *ngFor="let doctor of doctors">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{doctor.email}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{doctor.degree}} {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="buttons">
+      <button mat-raised-button color="primary" (click)="openDialog(doctor)">Edit</button>
+      <button mat-raised-button color="warn" (click)="openDialog(doctor)">Delete</button>
+    </div>
+  </mat-expansion-panel>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div class="block">
+  <p class="title">Diseases</p>
+  <div *ngFor="let disease of diseases">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{disease.disease_code}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{disease.pathogen}} {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- <button (click)="openDialog(doctor)">Edit</button>
+    <button (click)="openDialog(doctor)">Delete</button> -->
+    <p>{{disease.description}}</p>
+  </mat-expansion-panel>
+  </div>
+  <mat-divider></mat-divider>
+</div>

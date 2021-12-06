@@ -1,0 +1,41 @@
+<header [user_status]="isLogged"></header>
+<p class="title">All Users</p>
+<div class="block">
+  <div class="spans">
+    <p class="title">Email</p>
+    <p class="title">Name</p>
+    <p class="title">Surname</p>
+    <p class="title">Salary</p>
+    <p class="title">Phone Number</p>
+    <p class="title">Coutry</p>
+  </div>
+  <div *ngFor="let user of users">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="spans">
+      <mat-panel-title>
+        {{user.email}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{user.name}} 
+      </mat-panel-description>
+      <mat-panel-description>
+        {{user.surname}} 
+      </mat-panel-description>
+      <mat-panel-description>
+        {{user.salary}} 
+      </mat-panel-description>
+      <mat-panel-description>
+        {{user.phone}} 
+      </mat-panel-description>
+      <mat-panel-description>
+        {{user.cname}} 
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="buttons">
+    </div>
+  </mat-expansion-panel>
+  </div>
+  <mat-divider></mat-divider>
+</div>

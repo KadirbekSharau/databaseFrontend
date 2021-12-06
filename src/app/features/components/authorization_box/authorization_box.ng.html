@@ -1,0 +1,97 @@
+<mat-card>
+    <span class="title">Hospital Database</span>
+    <span class="title">{{mode}}</span>
+        <form class="authorization-form"
+              [formGroup]="form"
+              (ngSubmit) = "onSubmitRegister()"
+              
+        >
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" 
+                                matInput  
+                                placeholder="example@example.com"
+                                id="email"
+                                formControlName="email"/>
+                        <mat-error *ngIf="form.get('email')!.hasError('required')">
+                        Write your <strong>email address</strong>
+                        </mat-error>
+                        <mat-error *ngIf="form.get('email')!.hasError('email')">
+                            Wrong email
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input type="name" 
+                               matInput
+                               placeholder="First name"
+                               id="name"
+                               formControlName="name"/>
+                               <mat-error *ngIf="form.get('name')!.hasError('required')">
+                                   Empty name
+                               </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Surname</mat-label>
+                        <input type="name" 
+                               matInput
+                               placeholder="second name"
+                               id="surname"
+                               formControlName="surname"/>
+                               <mat-error *ngIf="form.get('surname')!.hasError('required')">
+                                   Empty surname
+                               </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Salary</mat-label>
+                        <input type="number" 
+                               matInput
+                               placeholder="salary"
+                               id="salary"
+                               formControlName="salary"/>
+                               <mat-error *ngIf="form.get('salary')!.hasError('required')">
+                                   Empty salary
+                               </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Phone</mat-label>
+                        <input type="tel" 
+                               matInput
+                               placeholder="phone"
+                               id="phone"
+                               formControlName="phone"/>
+                               <mat-error *ngIf="form.get('phone')!.hasError('required')">
+                                   Empty phone number
+                               </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <input type="name" 
+                               matInput
+                               placeholder="country"
+                               id="cname"
+                               formControlName="cname"/>
+                               <mat-error *ngIf="form.get('cname')!.hasError('required')">
+                                   Empty country
+                               </mat-error>
+                    </mat-form-field>
+                    <div class="card-action">
+                        <button mat-stroked-button
+                                type="submit"
+                                [disabled]="form.invalid || form.disabled"
+                        >
+                            <a *ngIf="isLoginMode(mode) === true; else login">Зарегистрироваться</a>
+                            <ng-template #login>Войти</ng-template>
+                        </button>
+                    </div>
+        </form>
+        <div>
+            <button *ngIf="isLoginMode(mode) === false" 
+                    routerLink="../register"
+                    mat-flat-button
+                    class="registration"
+            >
+                Don't have an account?</button>
+        </div>
+        
+</mat-card>

@@ -1,0 +1,82 @@
+<header [user_status]="isLogged"></header>
+<!-- <button mat-raised-button color="primary">Be Public Servant</button> -->
+<div class="block">
+  <div class="spans">
+    <p class="title">Public Servants</p>
+    <p class="title">Departments</p>
+  </div>
+  <div *ngFor="let publicServant of publicServants">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="spans">
+      <mat-panel-title>
+        {{publicServant.email}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{publicServant.department}} 
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="openDialog(publicServant)">Edit</button>
+        <!-- <button mat-raised-button color="warn" (click)="deletePb(publicServant)">Delete</button> -->
+    </div>
+  </mat-expansion-panel>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div class="block">
+    <div class="spans">
+        <p class="title">Email</p>
+        <p class="title">Country</p>
+        <p class="title">Disease Code</p>
+        <p class="title">Total Deaths</p>
+        <p class="title">Total Patients</p>
+      </div>
+    <div *ngFor="let record of records">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{record.email}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{record.cname}}
+        </mat-panel-description>
+        <mat-panel-description>
+            {{record.disease_code}}
+          </mat-panel-description>
+          <mat-panel-description>
+            {{record.total_deaths}}
+          </mat-panel-description>
+          <mat-panel-description>
+            {{record.total_patients}} 
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  
+  <div class="block">
+    <div class="spans">
+        <p class="title">Email</p>
+        <p class="title">Id of Disease</p>
+      </div>
+    <div *ngFor="let specialize of specializes">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{specialize.email}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{specialize.id}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  

@@ -1,0 +1,44 @@
+:host {
+    width: max-content;
+}
+
+mat-card {
+    width: 400px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    color: green;
+}
+
+.authorization-form {
+    margin-top: 20px;
+   }
+  
+  .example-full-width {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .card {
+      width: 100%;
+  }
+  .card-action {
+      text-align: center;
+  }
+
+  button {
+      background-color: green;
+      color: white;
+      margin-top: 20px;
+  }
+
+  .registration {
+      background-color: white;
+      color: purple;
+  }
